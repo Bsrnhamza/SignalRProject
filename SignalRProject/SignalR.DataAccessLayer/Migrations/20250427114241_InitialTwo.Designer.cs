@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SignalR.DataAccessLayer.Concrete;
 
@@ -11,9 +12,10 @@ using SignalR.DataAccessLayer.Concrete;
 namespace SignalR.DataAccessLayer.Migrations
 {
     [DbContext(typeof(SignalRContext))]
-    partial class SignalRContextModelSnapshot : ModelSnapshot
+    [Migration("20250427114241_InitialTwo")]
+    partial class InitialTwo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,7 +46,7 @@ namespace SignalR.DataAccessLayer.Migrations
 
                     b.HasKey("AboutID");
 
-                    b.ToTable("Abouts", (string)null);
+                    b.ToTable("Abouts");
                 });
 
             modelBuilder.Entity("SignalR.EntityLayer.Entities.Booking", b =>
@@ -79,7 +81,7 @@ namespace SignalR.DataAccessLayer.Migrations
 
                     b.HasKey("BookingID");
 
-                    b.ToTable("Bookings", (string)null);
+                    b.ToTable("Bookings");
                 });
 
             modelBuilder.Entity("SignalR.EntityLayer.Entities.Category", b =>
@@ -99,7 +101,7 @@ namespace SignalR.DataAccessLayer.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("SignalR.EntityLayer.Entities.Contact", b =>
@@ -144,7 +146,7 @@ namespace SignalR.DataAccessLayer.Migrations
 
                     b.HasKey("ContactID");
 
-                    b.ToTable("Contacts", (string)null);
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("SignalR.EntityLayer.Entities.Discount", b =>
@@ -176,7 +178,7 @@ namespace SignalR.DataAccessLayer.Migrations
 
                     b.HasKey("DiscountID");
 
-                    b.ToTable("Discounts", (string)null);
+                    b.ToTable("Discounts");
                 });
 
             modelBuilder.Entity("SignalR.EntityLayer.Entities.Feature", b =>
@@ -213,7 +215,7 @@ namespace SignalR.DataAccessLayer.Migrations
 
                     b.HasKey("FeatureID");
 
-                    b.ToTable("Features", (string)null);
+                    b.ToTable("Features");
                 });
 
             modelBuilder.Entity("SignalR.EntityLayer.Entities.Product", b =>
@@ -244,7 +246,7 @@ namespace SignalR.DataAccessLayer.Migrations
 
                     b.HasKey("ProductID");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("SignalR.EntityLayer.Entities.SocialMedia", b =>
@@ -269,7 +271,7 @@ namespace SignalR.DataAccessLayer.Migrations
 
                     b.HasKey("SocialMediaID");
 
-                    b.ToTable("SocialMedias", (string)null);
+                    b.ToTable("SocialMedias");
                 });
 
             modelBuilder.Entity("SignalR.EntityLayer.Entities.Testimonial", b =>
@@ -301,7 +303,7 @@ namespace SignalR.DataAccessLayer.Migrations
 
                     b.HasKey("TestimonialID");
 
-                    b.ToTable("Testimonials", (string)null);
+                    b.ToTable("Testimonials");
                 });
 #pragma warning restore 612, 618
         }

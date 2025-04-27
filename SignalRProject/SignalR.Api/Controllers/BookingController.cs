@@ -58,7 +58,7 @@ namespace SignalR.Api.Controllers
             _bookingService.TUpdate(booking);
             return Ok("Rezarvasyon güncellendi");
         }
-        [HttpGet]
+        [HttpGet("GetBooking")]
         public IActionResult GetBooking(int id)
         {
             var value =_bookingService.TGetByID(id);
