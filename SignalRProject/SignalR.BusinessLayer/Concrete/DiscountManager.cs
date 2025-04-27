@@ -1,4 +1,5 @@
-﻿using SignalR.DataAccessLayer.Abstract;
+﻿using SignalR.BusinessLayer.Abstract;
+using SignalR.DataAccessLayer.Abstract;
 using SignalR.EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SignalR.BusinessLayer.Concrete
 {
-    public class DiscountManager
+    public class DiscountManager : IDiscountService
     {
         private readonly IDiscountDal _discountDal;
 
