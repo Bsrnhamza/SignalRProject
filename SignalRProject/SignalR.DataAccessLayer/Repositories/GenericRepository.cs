@@ -25,9 +25,13 @@ namespace SignalR.DataAccessLayer.Repositories
 
         public void Delete(T entity)
         {
+            if (entity == null)
+                throw new ArgumentNullException(nameof(entity));
+
             _context.Remove(entity);
             _context.SaveChanges();
         }
+
 
         public T GetByID(int id)
         {

@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 namespace SignalR.DtoLayer.DiscountDto
 {
     public class CreateDiscountDto
-    {        
-        public string Location { get; set; }
-        public string Phone { get; set; }
-        public string Mail { get; set; }
-        public string FooterTitle { get; set; }
-        public string FooterDescription { get; set; }
-        public string OpenDays { get; set; }
-        public string OpenDaysDescription { get; set; }
-        public string OpenHours { get; set; }
+    {
+        public string Title { get; set; }
+        public string Amount { get; set; }
+        public string Description { get; set; }
+        public string ImageUrl { get; set; }
+        public bool Status { get; set; }
     }
 }

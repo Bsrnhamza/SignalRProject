@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SignalR.BusinessLayer.Abstract;
 using SignalR.DtoLayer.CategoryDto;
+using SignalR.EntityLayer.Entities;
 
 namespace SignalR.Api.Controllers
 {
@@ -24,6 +25,40 @@ namespace SignalR.Api.Controllers
         {
             var value = _mapper.Map<List<ResultCategoryDto>>(_categoryService.TGetListAll());
             return Ok(value);
+        }
+        [HttpPost]
+        public IActionResult CreateCategory(CreateCategoryDto createCategoryDto)
+        {
+            _categoryService.TAdd(new Category()
+            {
+                CategoryName = createCategoryDto.CategoryName,
+                Status =true
+            });
+            return Ok("Kategori Eklendi");
+        }
+        [HttpDelete]
+        public IActionResult DeleteCategory(int id)
+        { 
+            var value = _categoryService.TGetByID(id);
+            _categoryService.TDelete(value);
+            return Ok("Kategori Silindi");
+        }
+        [HttpGet("GetCategory")]
+        public IActionResult GetCategory(int id)
+        { 
+             var value = _categoryService.TGetByID(id);
+            return Ok(value);
+        }
+        [HttpPut]
+        public IActionResult UpdateCategory(UpdateCategoryDto updateCategoryDto)
+        {
+            _categoryService.TUpdate(new Category()
+            {
+                CategoryName = updateCategoryDto.CategoryName,
+                CategoryID = updateCategoryDto.CategoryID,
+                Status = updateCategoryDto.Status,
+            });
+            return Ok("Kategori Güncellendi");
         }
     }
 }
