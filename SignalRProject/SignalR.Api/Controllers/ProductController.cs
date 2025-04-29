@@ -67,7 +67,7 @@ namespace SignalR.Api.Controllers
             });
             return Ok("Özellik Güncellendi");
         }
-        [HttpGet("GetProductsWithCategories")]
+        [HttpGet("GetProductsWithCategories")] 
         public IActionResult GetProductsWithCategories()
         {
             var context = new SignalRContext();
